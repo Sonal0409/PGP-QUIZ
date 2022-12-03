@@ -1,0 +1,68 @@
+﻿no_of_questions,question_title,question_description,option_1,option_2,option_3,option_4,correct_answers,solution
+Q1,"When creating a container, how would you specify that the container should be attached to an existing network called my-network?",,use docker run --network my-network nginx,use docker run --network-alias web nginx,use docker run -n my-network nginx,use docker run --attach my-network nginx,1,
+Q2,Which of the following is NOT a directive in Dockerfile?,,WORKDIR,ENV,EXPOSE,VALUE,4,
+Q3,You are working on an app in Docker. You are determined to optimize Docker with CI/CD deployment. You have created an access token for DockerHub as the prerequisite step. Which of the following would be the first step in reducing build time and hence optimizing CI/CD operation?,,Using Docker Hub Password,Using build caches to reuse the layers,Making the release images to go to Dockerhub exclusively,Setting up functions to push PR images,2,
+Q4,"Which of the following statements about the Docker program is correct:
+
+1. It has the ability to reduce the size of development by providing a smaller footprint of the operating system via containers
+2. Its containers can be deployed on physical machines, virtual machines, and the cloud.
+3. Its containers are lightweight in nature, and therefore, are easily scalable.",,1 and 2,1 and 3,All of these,None of these,3,
+Q5,"Problem statement
+You are working on an app on Docker. You have to create an environment variable to change the behavior of a process. Which of the flags can be used to set an environment variable from an external file?
+
+Options
+
+1.
+
+Using the key --e alongside docker run command
+2.
+
+Using the key--env alongside docker var command
+3.
+
+Using the key --env-file alongside docker run command
+4.
+
+Using the key --env-ext alongside docker var command",,1,2,3,4,3,
+Q6,Labels are a mechanism for applying metadata to docker objects. You are assigned the task of labeling objects in your applications. Which of these cannot be used in key-value pairs of labels?,,com.example.*,com.docker.*,com.filename.*,com.newfile.*,2,
+Q7,"In Docker, which of the following syntaxes is used to delete a container?",,docker stop ContainerID,docker stats ContainerID,docker rm ContainerID,All of these,3,
+Q8,"Problem statement
+In Docker, which of the following execution result sequences is correct?",,Docker Image -> Dockerfile -> Docker Container,Docker Image -> Docker Container -> Dockerfile,Dockerfile -> Docker Container -> Docker Image,Dockerfile -> Docker Image -> Docker Container,4,
+Q9,"Problem statement
+You are working on a new application in Docker using docker hub API. You need to create an authentication token. The screen showed a response code of 200. In which of the following scenarios will this response code be displayed?",,When the authentication fails,When the authentication is successful,When there is a server error,When the session has timed out,2,
+Q10,"When there is no internet connectivity and you want to transfer a container from 1 machine to another, which of the below command to migrate the container as tar?",,docker export containerID >export.tar,docker shift containerID >export.tar,docker transfer containerID >export.tar,docker migrate containerID >export.tar,1,
+Q11,Which of the following is NOT a type of default network for Docker?,,bridge,host,local,none,3,
+Q12,"When you do docker login from CLI, you are prompted that Password will be stored unencrypted at ____ location, which is the correct location from the below option?",,/root/.docker/config.json,/etc/.docker/config.json,/root/.docker/config.yml,/etc/.docker/config.yml,1,
+Q13,Which of the below is the correct statement about ADD and COPY directive in Dockerfile?,,ADD can only accept local files and COPY can accept URL source,COPY can only accept local files and ADD can accept URL source,"ADD and COPY, both can accept URL source and local files as well","ADD and COPY, both cannot accept URL source but can accept local files",2,
+Q14,How should we give a user permission to interact with the Docker daemon on a machine without giving them unnecessary additional access?,,Add the user to the docker group,Give the user the ability to run docker commands with Sudo,Have them log in as the docker user,Give the user the root user credentials so they can run docker commands as root,1,
+Q15,"When you create a Volume in Docker, which is the default location from the below option from where it shares the content?",,/var/lib/docker/volumes,/etc/lib/docker/volumes,/var/src/docker/volumes,/etc/src/docker/volumes,1,
+Q16,Which of the below statement is NOT correct about Docker Compose?,,create a single container from a single image on a single host with a single command,create multiple containers from a single image on a single host with a single command,create multiple containers with multiple images on a single host with a single command,create multiple containers with multiple images on multiple hosts with a single command,4,
+Q17,Which of the following statements is incorrect?,,"When a container is deleted, the writable layer is persisted",The column 'virtual size' of docker ps -s output shows the amount of data used for the read-only image data used by the container plus the container's writable layer 'size,Copy-on-write is a Docker strategy of sharing and copying files for maximum efficiency,The column 'size' of docker ps -s output shows the amount of data that is used for the writable layer of each container,1,
+Q18,Which of the below is the correct statement about the CMD and ENTRYPOINT directive in Dockerfile?,,CMD can be overwritten whereas ENTRYPOINT cannot be overwritten,ENTRYPOINT can be overwritten whereas CMD cannot be overwritten,"CMD and ENTRYPOINT, both cannot be overwritten","CMD and ENTRYPOINT, both can be overwritten",1,
+Q19,Which of the following is NOT a type of Namespace accepted by Docker?,,PID,Mount,User,Group,4,
+Q20,You have just executed 'docker swarm leave' on a node. What command can be run on the same node to confirm it has left the cluster?,,docker node ls,docker system info,docker system status,docker system inspect,2,
+Q21,Which of the following statement is true about Stack in Docker Swarm?,,Stack is a group of multiple services,Stack can be used by docker-compose,removing stack will not remove the services,Stack can be defined without mentioning the Service,1,
+Q22,What is the difference between a replicated and a global service?,,Replicated service runs one task on every node. Global service runs multiple tasks on every node,Good candidates for replicated service are monitoring agents that you want to run on every node in the swarm. Good candidates for global service are HTTP servers,The number of identical tasks can be specified for a replicated service. There is no pre-specified number of tasks for global service,Replicated service can only be deployed on the manager node. Global service can be deployed on both manager and worker node,3,
+Q23,"Problem statement
+You are working on a storage driver API to model a key/value storage. There are several storage drivers as potential options. Which of the following would help you to resolve this?
+
+Options
+
+1.
+
+Use StorageDriverFactory interface to select a driver through parameter mapping
+
+2.
+
+Use factory, New to select correct instances for the driver
+
+3.
+
+Use selectSuite function to select the correct driver required through internal processing
+
+4.
+
+Use immemory and filesystem driver as they are generalized drivers that contain all other drivers in them.",,1,2,3,4,1,
+Q24,Which of the below command can be used to check docker image layers?,,docker inspect imageID,docker history imageID,docker describe imageID,docker logs imageID,2,
+Q25,"You executed the below command to create a map and a bind mount but the actual location on the host OS does not exist, what will happen?
+docker run -d -P -v /tmp/test:/usr/share/nginx/html nginx",,it will prompt an error saying the location does not exist,"it will create the container, but you need to create the location manually on the host machine",it will create the container and will create the location automatically on the host machine,it will create the container without the mapping of a bind mount,3,

@@ -1,0 +1,79 @@
+﻿no_of_questions,question_title,option_1,option_2,option_3,option_4,correct_answers,solution
+Q1,"In Ansible, you are working on the Continuous delivery and the rolling upgrades in the Ansible Playbooks. If you are iterate over each monitoring server and load balancer, and perform that operation on the monitoring or load balancing server, on behalf of the webserver, then which of the following combination of arguments should be implemented in this scenario?",pre_tasks and delegate_to,pre_tasks and with_items,delegate_to and with_items,pre_tasks and loop,3,
+Q2,Which of the following tags would you use to disable installation of requirements.yml?,"""--offline""","""--off""","""-v""","""-d""",1,
+Q3,You are finding roles on Ansible Galaxy. You ran the following command in the Ansible Galaxy Command Line: $ ansible-galaxy search elasticsearch --author vc. What would be the output?,First 100 results with author name starting with vc,First 1000 results with author as vc,A result with Author whose name starts with vc,Random 100 results with author as vc,2,
+Q4,"You are importing Ansible content into the public Galaxy website. So, you have logged in using your Github Account. After logging in for the first time, what would you do to initiate the role imported directly from Travis?",Add a webhook in travis.yml file,Add a trigger method in the notification section,Set the branch to import all settings,Specify the repository name in the Ansible-Galaxy comand line tool,1,
+Q5,What would you do so that the linter returns a success while a failure is found but the total number of violations is not more than the previous commit?,"""--ignore""","""--progressive""","""-x SKIP LIST""","""-q""",2,
+Q6,"Problem statement
+Go through the given function that is defined in an Ansible file:
+
+def testfun(self, task: Dict[str, Any]) -> Union[bool,str]: 
+if not set(task.keys()).isdisjoint(['include','fail']): 
+  return False 
+if not task.has_key('tags'): 
+  return True 
+return False 
+What does the function do?",Checking if the tasks have playbook tags and returning them,"If there exists a taks with required criteria, return true, else create one.","If the task include another task or make the playbook fail, Don't force to have a tag",Packaging your custom rules based on tags,3,
+Q7,You want to exclude rules except those with metadata and tags formatting. Which of the following codes would you use to perform the given operation?,$ ansible-lint -t idempotency playbook.yml,"$ ansible-lint -t formatting,metadata playbook.yml","$ ansible-galaxy -x SKIP LIST formatting,metadata playbook.yml","$ ansible-lint -x formatting,metadata playbook.yml",4,
+Q8,What is the default name of APB set by the Galaxy with some minor changes like some of the symbols are converted to ‘_’ and and the name to lowercase?,Ansible galaxy type,Control Repository name,Metadata file name,Unaltered Repository name,4,
+Q9,Which of the following commands would you use to create a role in the Ansible Galaxy command line tool?,create,init,new,role,2,
+Q10,The latest version of collection is not required and Ansible allows installation of only one version of collection. Which of the following codes would you use to install the 1.0.0-beta.1 version of the collection?,ansible -i my_namespace.my_collection:==1.0.0-beta.1,ansible-galaxy collection install my_namespace.my_collection:==1.0.0-beta.1,"ansible-galaxy collection install 'my_namespace.my_collection:>=1.0.0,<2.0.0'","ansible -i 'my_namespace.my_collection:>=1.0.0,<2.0.0'",2,
+Q11,The type key has been omitted in the requirements.yml file. What would be used to find out the source of the collection?,url,file,name,galaxy,3,
+Q12,Which of the following files would you use to install more than one collections in a single command?,tar.gz,requirements.yml,setup.yml,collections.tz,2,
+Q13,"The _ansible_syslog_facility is used to check the syslog facility ansible module logs to. You can change the syslog_facility value in ansible.cfg. Previously, we used to instantiate an AnsibleModule as:
+
+import syslog syslog.openlog(NAME, 0, syslog.LOG_USER)
+However, in newer versions like 2.1, we write it as:
+
+import syslog facility_name = module._syslog_facility facility = getattr(syslog, facility_name, syslog.LOG_USER) syslog.openlog(NAME, 0, facility)
+
+What could be the primary reason for this modification in the code?",The newer code is more efficient,The old code was very hacky,The old code consumes a lot of memory,The newer code runs with lessor parameters,2,
+Q14,What does Ansible use to check if the interpreter in the shebang line has a path which is specified to make modifications to all the available modules?,Module Replacer,utils.MOD variable,ansible_$X_interpreter inventory variable,powercell_common,3,
+Q15,Which of the following Action plug-ins would you use to check if the values in the playbook satisfies the given criteria?,assert,debug,normal,test,1,
+Q16,What would you use to define a specific failure criteria for tasks?,try catch,failed_when,error try,return try,2,
+Q17,"You want root access to a remote machine in Ansible Tower.
+
+Which of the following way(s) could you do in Ansible 2.8?
+
+1.
+
+ansible_user=root ansible_ssh_private_key_file=”path_to_your_keyfile.pem” inventory host or group variables. 
+2.
+
+ansible_user=root ansible_ssh_pass=”your_password_here” inventory host or group variables. 
+3.
+
+ANSIBLE_BECOME_METHOD=’sudo’ ANSIBLE_BECOME=True ./setup.sh. 
+4.
+
+ANSIBLE_SUDO=True ./setup.sh.",1 and 2,All of these,"1, 3, and 4","1, 2, and 3",4,
+Q18,You are installing an Inventory file for an external database. What file would you run after making the installation?,Run ./store.sh.,node setup.sh,Run ./setup.sh.,Execute cmd -i files,3,
+Q19,You are upgrading from a previous version of Ansible Tower to a newer version. What would you rename rabbing_host in your inventory?,newrabbitmg,routable_hostname,rabbitmg_hostname,routable_host,2,
+Q20,"Problem statement
+Consider the given code.
+
+- hosts: webservers 
+    tasks: 
+        - name: 1st task 
+        ansible.builtin.debug: 
+        msg: ""Before role"" 
+        - name: 2nd task 
+        import_role: name: example 
+        - name: 3rd task 
+        ansible.builtin.debug: 
+        msg: ""After role"" 
+Problem Statement: 
+
+Which of the following options correctly depicts the use of the above code?",Changing the behaviour of the tasks,Importing role for Changing role controls,Importing roles for static reuse,Exporting System files with tasks,3,
+Q21,"Problem statement
+Scenario: 
+
+You want to execute the role dependencies. There are two roles that list the third role as a dependency.
+
+Problem Statement:
+
+You want Ansible to run the role more than once for all the roles without any tag and without when clause. How would you achieve it?",Use allow_duplicates: true in the dependent (third) role,Mention the role in the import tag,Store the role in meta/main.yml file.,Add a variable to an import_role statement,1,
+Q22,You want to pass parameters in the role with messages. Which of the following codes would you use?,"roles{ Bar, message =”1stTest”; Foo, message =”2ndTest”; }","roles: -bar, vars: { message: ""Test1"" } -foo, vars: { message: ""Test2"" }",roles{ Bar: message =”1stTest”; Foo: message =”2ndTest”; },"roles: - { role: bar, vars: { message: ""Test1"" } } - { role: foo, vars: { message: ""Test2"" } }",4,
+Q23,"You want that the roles can be used dynamically, anywhere in the tasks section of the play. What would you do to ensure this?",Mark the host as Webservers,Set the task level as include_role,Set the task level as import_role,Make the roles common,2,
+Q24,Where are the variables stored which are applied to server groups to configure the behaviour and easily tweak the settings and parameters?,dbserver,group_vars,server_vars,db_store,2,
+Q25,You need the scripts to arrange so that the argument strings could be placed within them. What would you do?,Use json_aruguments JSON library in Ansible,"Set the json_arguments = """"""<<INCLUDE_ANSIBLE_MODULE_JSON_ARGS>>""""""","Set the json_arguments = """"""<<ARGS_ARRANGE>>""""""",Set the parameter property as arrange,2,
