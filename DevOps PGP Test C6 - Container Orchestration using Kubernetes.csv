@@ -1,0 +1,93 @@
+no_of_questions,question_title,question_description,option_1,option_2,option_3,option_4,correct_answers,solution
+Q1,You are working in an organization that is using Kubernetes to manage its cloud-based activities. Which of the following commands can you use to create a new service object to load balance traffic across Pods?,,create,run,autoscale,expose,4,
+Q2,Mark is working on Kubernetes. He has created a Kubernetes cluster and now wants to have Nodes added to the API server. Then which of the following are the way to add Node to the API server?,,kubelet to self-register to the control plane,"manually add a Node object
+",Using JSON manifest,Both 1 and 2,4,
+Q3,Mark is working on Kubernetes. He has created a Kubernetes cluster and now wants to modify the Nodes Then which of the following are the Node's status information?,,Addresses,Conditions,Capacity and Allocatable,All the above,4,
+Q4,Mark is working on Kubernetes. He wants to create a Kubernetes cluster to manage application containers across a cluster. Then which of the following are the resources part of Kubernetes cluster?,,Control Plane and Nodes,Minikube,Kubernetes API,All the above,1,
+Q5,Mark is working on Kubernetes. He wants to use the container runtime software for managing and running containers. Then through which of the following options can he access the service through Kubernetes?,,containerd,CRI-O,Kubernetes CRI,All the above,4,
+Q6,You want to use Kubernetes on your personal computer. Which of the following tools can you use to run Kubernetes locally?,,kind,kube,minikube,kubeadm,3,
+Q7,You are creating an object in Kubernetes for the application you are developing. You want to modify the objects before creating them. Which of the following ways can you use to modify?,,Using a combination of set and create command,Using patch command for directly modifying contents,Creating new labels to modify the content,"Creating and using logs to modify the content, accordingly",1,
+Q8,"Suppose you want to deploy your application on Kubernetes using minikube. Some of the initial steps to create a Kubernetes cluster are mentioned below. Which steps should you run and in what order to set up a cluster in minikube?                                                                                  
+1.kubernetes version
+2.minikube version
+3.minikube start
+4.kubectl version
+5.kubectl start
+6.kubectl cluster-info
+7.kubectl get nodes",,"1, 3, 5, 6, 7","1, 4, 5, 6, 7","2. 3, 4, 6, 7","2. 4, 5, 6, 7",3,
+Q9,"There is a company that has a highly distributed system with a huge variety of data clouds and multiple virtual machines. The company has started using Kubernetes to manage consistency in the work. You have several nodes in the Kubernetes Cluster. How can you have nodes added to API Server?                            
+1.The kubelet on a node self-registers to the control plane
+2. The user manually add a Node object",,1,2,Either 1 or 2,"None of these
+",3,
+Q10,"An organization is working on cloud infrastructure using Kubernetes to reduce cost and increase competency. Every node in a Kubernetes cluster runs a kube-proxy for implementing a form of virtual IP for Services. Which of the following data structure is used by the ""IPVS proxy mode"" as the underlying data structure which works in the kernel space?",,"Dynamic Arrays
+",Linked List,Hash Table,Stack,3,
+Q11,You are working on deploying an app in Kubernetes. You are required to provide service inside a cluster without any external access. Which of the following services is useful in the mentioned scenario?,,Using Cluster IP service inside the clusters,Making use of NodePort service within clusters,Using LoadBalancer service between the clusters,Using Internal service inside the clusters,1,
+Q12,"You are using Kubernetes for managing files in the Kubernetes container. The Kubernetes ""Volume abstraction"" handles the files when a container crashes and sharing files between containers.
+
+Which of the following commands should you write to use a volume, specify the volumes to provide for the Pod and declare where to mount those volumes into containers?                 1. 
+
+.spec.volumes
+.spec.containers[""all""].volume                           
+2. 
+
+.spec.volume
+.spec.containers[""*""].volumeMount           
+3. 
+
+.spec.volume
+.spec.containers[].volumeMount              
+4. 
+
+.spec.volumes
+.spec.containers[*].volumeMount",,1,2,3,4,4,
+Q13,"There is an MNC that wants to adopt cloud infrastructure to manage their workload in a cost-effective and consistent way. The cloud infrastructure technologies let you run Kubernetes on public, private, and hybrid clouds. The Kubernetes cloud controller manager lets you link your cluster into your cloud provider's API.
+
+Which of the following access the service controller inside the cloud controller managers require on various API objects?
+
+1.Get
+2.Create
+3.Update
+4.Patch
+5.Delete",,"1, 2 and 3
+","1, 3 and 4","1, 2, 3 and 4","1, 2, 3, 4 and 5",2,
+Q14,"Mark is working on Kubernetes. He wants to create a Kubernetes object for cluster's workload using .yaml file.Then which of the given fields are mandatory to avoid any errors?             Fields:
+
+1.apiVersion
+2.kind
+3.metadata
+4.name
+5.string
+6.UID
+7.namespace
+8.spec",,"1, 3, 4, 6, 7 and 8","1, 2, 4, 5, 7 and 8","1, 2, 3, 4, 5, 6 and 8","2, 3, 4, 5, 6, 7 and 8",3,
+Q15,Bob is working on Kubernetes. He wants to run an instance of the nginx container by creating a Deployment object in Kubernetes. Then which of the following command can he use?,,kubectl create deployment nginx --image nginx,kubectl install -f deployment nginx --image nginx --run,kubectl apply -f deployment nginx --image nginx --restart,kubectl config use-context deployment nginx --image nginx,1,
+Q16,"An organization is using the Kubernetes system for deploying applications and more efficiently utilizing the containerized infrastructure that powers the apps. It makes apps more resilient and performant.                   
+Which of the following is/are not true about Kubernetes?
+
+1.Kubernetes is monolithic
+2.Kubernetes is an all-inclusive PaaS (Platform as a Service) system
+3.Kubernetes does not deploy source code and does not build your application",,1 and 3,2 and 3,1 and 2,All of the above,3,
+Q17,Your organization wants to enhance its storage capacity and backup policies. This company uses Kubernetes to manage consistency and has Storage Classes. Which of the following does not come under StorageClass?,,provisioner,reclaimPolicy,arguments,parameters,3,
+Q18,"In Kubernetes, which of the following is a component of the master machine?",,etcd,API server,Scheduler,All of these,4,
+Q19,John is working on Kubernetes. He has used the Kubernetes API to create the object via kubectl with API request and also  included required the information in JSON format in the request body. But still he is getting an error. Then which of the following options can be the solution for the above mentioned error?,,Provide the information to kubectl in a .yaml file,Provide the information to kubectl in a JSON file,create a Deployment using a .kube file,create a Deployment using a .Dockerfile,1,
+Q20,You are working with Kubernetes on an application. You need to create a task that runs repeatedly as per a specific schedule. Which of the following resources can be used to recur a task?,,Using Job for recurring tasks,Making use of DaemonSet to schedule runs,Setting up Cronjobs to recur a task,Setting up Deployment for recurring tasks,3,
+Q21,"Which of the following statements about the Kubernetes system is correct:
+
+1.It is a loosely-coupled infrastructure where each component acts as a separate unit.
+2.It has a higher density of resource utilization.
+3.It is used for the development of products but does not support the integration and deployment of the same.",,1 and 2,"1 and 3
+",All of these,None of these,1,
+Q22,"A company is planning to increase its competence and efficiency by performing work with minimum cost by making use of methodology like Devops, so they decided to work with Kubernetes to get their jobs done at a low cost and save much time of deployment. But there are some things that Kubernetes is not. Which of the following are those?
+
+1.Kubernetes aims to support stateless and stateful workloads.     
+2. Kubernetes provide application-level services, such as middleware, data-processing frameworks, databases, caches, and cluster storage systems as built-in services.       
+3. Kubernetes allows you to automatically mount a storage system of your choice.    
+4. Kubernetes restarts containers that fail, replaces containers, kills containers that don't respond to your user-defined health check, and doesn't advertise them to clients until they are ready to serve.",,1,2,3,4,2,
+Q23,"In Kubernetes, which of the following statements correctly explains the client-server architecture:
+
+1.The master and node are installed on the same machine.
+2.The master is installed on one machine and the node is installed on a different Linux machine.
+3.The master and node are installed on different Linux machines.",,2,"1,3","1,2,3",None of these,1,
+Q24,"In Kubernetes, which of the following Command Line Tools is used to create, update, and delete an API object?", ,Kubectl,Kubeadm,Kubefed,"None of these
+",1,
+Q25,A company is using Kubernetes to provide improved scalability and availability to its applications. Which of the following Kubernetes Node Components maintains network rules on nodes which allows network communication to Pods from network sessions inside or outside of the cluster?,,kubelet,etcd,kube-proxy,Container runtime,3,
